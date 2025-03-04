@@ -24,7 +24,6 @@ fun Navigation(
 ) {
     NavHost(navController, startDestination = Home) {
         composable<HomeRoute> { entry ->
-            val result = entry.savedStateHandle.get<Map<String, Any?>?>("result")
             HomeScreen(
                 onAddNoteClicked = {
                     entry.savedStateHandle.remove<Map<String, Any?>?>("result")
@@ -34,7 +33,6 @@ fun Navigation(
                     entry.savedStateHandle.remove<Map<String, Any?>?>("result")
                     navController.navigate(route = AddNoteRoute(noteId = it))
                 },
-                result = result,
             )
         }
         composable<AddNoteRoute> {

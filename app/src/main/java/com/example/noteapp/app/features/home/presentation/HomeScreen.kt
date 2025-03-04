@@ -73,7 +73,6 @@ fun HomeScreen(
     viewModel: HomeViewModel = koinViewModel(),
     onAddNoteClicked: () -> Unit,
     onEdit: (Int) -> Unit,
-    result: Map<String, Any?>?,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val uiEvent = viewModel.uiEvent
@@ -86,13 +85,6 @@ fun HomeScreen(
                 }
 
                 HomeUIEvent.None          -> {}
-            }
-        }
-    }
-    LaunchedEffect(result) {
-        result?.let {
-            if (it["message"] != null) {
-                snackBarHostState.showSnackbar(it["message"].toString())
             }
         }
     }
