@@ -10,5 +10,5 @@ class HomeRepositoryImpl(
 ) : HomeRepository {
     override fun getAllNotes(): Flow<List<Note>> = noteDao.getAllNotes()
 
-    override suspend fun deleteNote(note: Note) = noteDao.deleteNote(note)
+    override suspend fun deleteNote(noteId: Int) = noteDao.deleteNote(noteId)
 }

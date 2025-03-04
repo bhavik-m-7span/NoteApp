@@ -4,7 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.toRoute
-import com.example.myapplication.validator.StringValidator
+import com.example.noteapp.app.core.presentation.validator.StringValidator
 import com.example.noteapp.app.core.domain.model.Note
 import com.example.noteapp.navigation.AddNoteRoute
 import com.example.noteapp.app.core.presentation.validator.FormSubmissionStatus
@@ -32,6 +32,12 @@ import kotlinx.coroutines.launch
 // EOD 03.03
 // 1. Improved Formz functionality
 // 2. Working on Clean architecture with MVI
+
+// EOD 04.03
+// 1. Implemented Clean Architecture with MVVM in NoteApp
+// 2. Separated each functionality into usecases and repo
+// 3. Separated di modules into each feature modules
+// 4. Updated Delete Note functionality
 
 class NoteViewModel(
     private val useCase: NoteUseCases,

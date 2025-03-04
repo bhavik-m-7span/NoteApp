@@ -1,6 +1,4 @@
-package com.example.myapplication.validator
-
-import com.example.noteapp.app.core.presentation.validator.FormInput
+package com.example.noteapp.app.core.presentation.validator
 
 enum class StringValidationError {
     INVALID,

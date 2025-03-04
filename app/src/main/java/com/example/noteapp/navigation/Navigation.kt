@@ -1,7 +1,6 @@
 package com.example.noteapp.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.input.key.Key.Companion.Home
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -22,7 +21,7 @@ data class AddNoteRoute(
 fun Navigation(
     navController: NavHostController,
 ) {
-    NavHost(navController, startDestination = Home) {
+    NavHost(navController, startDestination = HomeRoute) {
         composable<HomeRoute> { entry ->
             HomeScreen(
                 onAddNoteClicked = {

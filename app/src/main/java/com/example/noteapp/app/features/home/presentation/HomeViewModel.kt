@@ -2,7 +2,6 @@ package com.example.noteapp.app.features.home.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.noteapp.app.core.domain.model.Note
 import com.example.noteapp.app.features.home.domain.usecase.HomeUseCases
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -37,9 +36,9 @@ class HomeViewModel(
     private val _uiEvent = MutableSharedFlow<HomeUIEvent>()
     val uiEvent = _uiEvent.asSharedFlow()
 
-    fun deleteNote(note: Note) {
+    fun deleteNote(noteId: Int) {
         viewModelScope.launch {
-            useCase.deleteNoteUseCase(note)
+            useCase.deleteNoteUseCase(noteId)
             _uiEvent.emit(HomeUIEvent.DeleteSuccess)
         }
     }

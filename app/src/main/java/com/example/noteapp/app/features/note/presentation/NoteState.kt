@@ -1,7 +1,7 @@
 package com.example.noteapp.app.features.note.presentation
 
 import com.example.noteapp.app.core.presentation.validator.FormSubmissionStatus
-import com.example.myapplication.validator.StringValidator
+import com.example.noteapp.app.core.presentation.validator.StringValidator
 
 data class NoteState(
     var noteId: Int? = null,

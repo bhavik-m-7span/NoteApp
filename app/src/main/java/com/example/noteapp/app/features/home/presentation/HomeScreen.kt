@@ -103,7 +103,7 @@ fun Body(
     modifier: Modifier = Modifier,
     homeSate: HomeState,
     onEdit: (Int) -> Unit,
-    onDelete: (Note) -> Unit,
+    onDelete: (Int) -> Unit,
 ) {
     Box(
         modifier
@@ -154,7 +154,7 @@ private fun HomeComposable(
     homeSate: HomeState = HomeState(),
     onAddNoteClicked: () -> Unit = {},
     onEdit: (Int) -> Unit = {},
-    onDelete: (Note) -> Unit = {},
+    onDelete: (Int) -> Unit = {},
     snackBarHostState: SnackbarHostState = remember { SnackbarHostState() },
 ) {
     Scaffold(
@@ -192,7 +192,7 @@ private fun HomeComposable(
 private fun NoteItem(
     note: Note,
     onEdit: (Int) -> Unit,
-    onDelete: (Note) -> Unit,
+    onDelete: (Int) -> Unit,
 ) {
     var offsetX by remember { mutableFloatStateOf(0f) }
 
@@ -237,7 +237,7 @@ private fun NoteItem(
                     contentAlignment = Alignment.CenterEnd,
                 ) {
                     IconButton(onClick = {
-                        onDelete(note)
+                        onDelete(note.id)
                     }) {
                         Icon(
                             imageVector = Icons.Default.Delete,

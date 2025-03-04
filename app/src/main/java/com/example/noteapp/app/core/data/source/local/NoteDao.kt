@@ -1,7 +1,6 @@
 package com.example.noteapp.app.core.data.source.local
 
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -17,8 +16,8 @@ interface NoteDao {
     @Update
     suspend fun updateNote(note: Note)
 
-    @Delete()
-    suspend fun deleteNote(note: Note)
+    @Query("DELETE FROM notes WHERE id = :noteId")
+    suspend fun deleteNote(noteId: Int)
 
     @Query("SELECT * FROM notes ORDER BY id DESC")
     fun getAllNotes(): Flow<List<Note>>
